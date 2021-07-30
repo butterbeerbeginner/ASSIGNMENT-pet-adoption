@@ -94,19 +94,19 @@ const filterPets = (array, instructor) => {
 
 
 const handleButtonClick = (event) => {
-
   if (event.target.id === "All") {
     cardBuilder(pets);
   }
-  if (event.target.it === "Dogs") {
+
+  if (event.target.id === "Dogs") {
     const dogPets = filterPets(pets, event.target.id);
     cardBuilder(dogPets);
   }
-  if (event.target.it === "Cats") {
+  if (event.target.id === "Cats") {
     const catPets = filterPets(pets, event.target.id);
     cardBuilder(catPets);
   }
-  if (event.target.it === "Dinos") {
+  if (event.target.id === "Dinos") {
     const dinoPets = filterPets(pets, event.target.id);
     cardBuilder(dinoPets);
   }
