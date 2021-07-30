@@ -47,6 +47,27 @@ const pets = [
     "color": "Chocolate",
     "specialSkill": "Thinks the best of you at all times",
     "typeOfPet": "Dog"
+  },
+  {
+    "image": "https://previews.123rf.com/images/red33/red331112/red33111200077/11655607-cute-little-dinosaur-vector-illustration.jpg",
+    "name": "Walter",
+    "color": "Green",
+    "specialSkill": "Dominates Halloween",
+    "typeOfPet": "Dino"
+  },
+  {
+    "image": "https://previews.123rf.com/images/dualororua/dualororua1510/dualororua151000450/46818902-cute-little-dinosaur.jpg",
+    "name": "A-Rod",
+    "color": "Purple",
+    "specialSkill": "Can reach the top shelf at all times",
+    "typeOfPet": "Dino"
+  },
+  {
+    "image": "https://i2.wp.com/image.freepik.com/free-vector/cute-little-dinosaur-portrait-with-watercolor-effect_102385-342.jpg",
+    "name": "Daisy",
+    "color": "Blue",
+    "specialSkill": "Makes friends with all the neighbors",
+    "typeOfPet": "Dino"
   }
 
 ];
@@ -61,23 +82,35 @@ const buttons = () => {
   const domString = `
     <button type="button" class="btn btn-primary" id="All">All</button>
     <button type="button" class="btn btn-secondary" id="Dogs">Dogs</button>
-    <button type="button" class="btn btn-success" id="Cats">Cats</button>`;
+    <button type="button" class="btn btn-success" id="Cats">Cats</button>
+    <button type="button" class="btn btn-danger" id="Dinos">Dinos</button>`;
 
-    renderToDom("#petContainer", domString);
+    renderToDom("#buttonContainer", domString);
 };
+
+const filterPets = (array, instructor) => {
+  return array.filter(petObject => petObject.instructor === instructor);
+}
 
 
 const handleButtonClick = (event) => {
+
   if (event.target.id === "All") {
-    console.log("The All Button");
+    cardBuilder(pets);
   }
-  if (event.target.id === "Dogs") {
-    console.log("Dogs Button");
+  if (event.target.it === "Dogs") {
+    const dogPets = filterPets(pets, event.target.id);
+    cardBuilder(dogPets);
   }
-  if (event.target.id === "Cats") {
-    console.log("Cats Button");
+  if (event.target.it === "Cats") {
+    const catPets = filterPets(pets, event.target.id);
+    cardBuilder(catPets);
   }
-}
+  if (event.target.it === "Dinos") {
+    const dinoPets = filterPets(pets, event.target.id);
+    cardBuilder(dinoPets);
+  }
+};
 
 const cardBuilder = (petsArray) => {
   let domString = "";
@@ -94,7 +127,7 @@ const cardBuilder = (petsArray) => {
     `;
   });
 
-  renderToDom("#buttonContainer", domString)
+  renderToDom("#petContainer", domString)
 }
 
 
