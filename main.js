@@ -81,15 +81,15 @@ const renderToDom = (divId, textToPrint) => {
 const buttons = () => {
   const domString = `
     <button type="button" class="btn btn-primary" id="All">All</button>
-    <button type="button" class="btn btn-secondary" id="Dogs">Dogs</button>
-    <button type="button" class="btn btn-success" id="Cats">Cats</button>
-    <button type="button" class="btn btn-danger" id="Dinos">Dinos</button>`;
+    <button type="button" class="btn btn-secondary" id="Dog">Dog</button>
+    <button type="button" class="btn btn-success" id="Cat">Cat</button>
+    <button type="button" class="btn btn-danger" id="Dino">Dino</button>`;
 
     renderToDom("#buttonContainer", domString);
 };
 
-const filterPets = (array, instructor) => {
-  return array.filter(petObject => petObject.instructor === instructor);
+const filterPets = (array, animal) => {
+  return array.filter((petObject) => petObject.animal === animal);
 }
 
 
@@ -98,15 +98,15 @@ const handleButtonClick = (event) => {
     cardBuilder(pets);
   }
 
-  if (event.target.id === "Dogs") {
+  if (event.target.id === "Dog") {
     const dogPets = filterPets(pets, event.target.id);
     cardBuilder(dogPets);
   }
-  if (event.target.id === "Cats") {
+  if (event.target.id === "Cat") {
     const catPets = filterPets(pets, event.target.id);
     cardBuilder(catPets);
   }
-  if (event.target.id === "Dinos") {
+  if (event.target.id === "Dino") {
     const dinoPets = filterPets(pets, event.target.id);
     cardBuilder(dinoPets);
   }
