@@ -81,15 +81,15 @@ const renderToDom = (divId, textToPrint) => {
 const buttons = () => {
   const domString = `
     <button type="button" class="btn btn-primary" id="All">All</button>
-    <button type="button" class="btn btn-secondary" id="Dog">Dog</button>
-    <button type="button" class="btn btn-success" id="Cat">Cat</button>
-    <button type="button" class="btn btn-danger" id="Dino">Dino</button>`;
+    <button type="button" class="btn btn-secondary" id="Dog">Dogs</button>
+    <button type="button" class="btn btn-success" id="Cat">Cats</button>
+    <button type="button" class="btn btn-danger" id="Dino">Dinos</button>`;
 
     renderToDom("#buttonContainer", domString);
 };
 
 const filterPets = (array, animal) => {
-  return array.filter((petObject) => petObject.animal === animal);
+  return array.filter((petObject) => petObject.typeOfPet === animal);
 }
 
 
