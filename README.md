@@ -21,6 +21,6 @@
 
 *List of Contributors: Meredith Marcum
 
-*Link to Loom Video
+*Link to Loom Video: NA
 
   
